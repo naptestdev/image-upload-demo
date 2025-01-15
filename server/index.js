@@ -6,6 +6,10 @@ const cloudinary = require("./utils/cloudinary");
 const app = express();
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.send("Send post request to /upload to upload image");
+});
+
 app.post("/upload", upload.single("image"), (req, res) => {
   cloudinary.uploader.upload(req.file.path, (err, result) => {
     if (err) {
