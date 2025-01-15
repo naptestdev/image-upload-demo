@@ -2,9 +2,11 @@ require("dotenv").config();
 const express = require("express");
 const upload = require("./middleware/multer");
 const cloudinary = require("./utils/cloudinary");
+const cors = require("cors");
 
 const app = express();
 app.use(express.json());
+app.use(cors());
 
 app.get("/", (req, res) => {
   res.send("Send post request to /upload to upload image");
