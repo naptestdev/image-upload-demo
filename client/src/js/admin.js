@@ -14,9 +14,6 @@ productForm.addEventListener("submit", function (event) {
     fetch("http://localhost:3000/upload", {
       method: "POST",
       body: formData,
-      headers: {
-        "Content-Type": "multipart/form-data",
-      },
     })
       .then((response) => response.json())
       .then((result) => {
